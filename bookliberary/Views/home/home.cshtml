@@ -1,0 +1,37 @@
+﻿@model IEnumerable<bookliberary.Models.bookcategory>
+
+@{
+    ViewBag.Title = "home";
+}
+
+<h2>home</h2>
+
+<p>
+    @Html.ActionLink(" اضافة فئة جديدة", "addcat")
+    @Html.ActionLink(" اضافة اهتمامات", "add_interst")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            book categories
+        </th>
+        
+    </tr>
+
+    
+        @foreach (var item in Model)
+        {
+            
+                <tr style="background-color:aliceblue ;" >
+                    <td >
+                        @Html.ActionLink(item.catName,"getbooks",new {id=item.id })
+                        
+                    </td>
+
+                </tr>
+            
+
+        }
+    
+
+</table>

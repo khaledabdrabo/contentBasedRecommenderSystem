@@ -1,0 +1,47 @@
+﻿@model IEnumerable<bookliberary.Models.books>
+
+@{
+    ViewBag.Title = "كتب نصية";
+}
+
+<h2>getbooks</h2>
+
+<p>
+    @Html.ActionLink("اضافة كتاب", "addbook",new { id=ViewBag.id})
+</p>
+<table class="table">
+    <tr>
+        
+       
+        
+        
+        
+        <th>@ViewBag.name</th>
+    </tr>
+
+    
+@foreach (var item in Model)
+{
+
+
+    <div style="background-color:;height:auto;width:auto ; display:inline-block;margin:5px;border:1px solid black">
+    <div style="background-color:;height:auto;width:auto">
+        <img src="~/content/images/@item.image" style="height:auto;width:auto" /></div>
+    <div style="background-color:;width:auto ;height:auto">
+        اسم الكتاب:  @item.bookName <br />
+        المولف : @item.author<br />
+        سنة النشر:  @item.bookyear<br />
+        الفئة: @item.category<br />
+        
+        
+        
+        
+        
+        
+        
+        </div></div>
+
+    
+}
+
+</table>
